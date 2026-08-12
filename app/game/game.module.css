@@ -1,0 +1,267 @@
+.gameContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #ffd700;
+  gap: 2rem;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #ffd700;
+  margin: 0.3rem 0 0 0;
+  font-weight: 600;
+}
+
+.headerRight {
+  flex-shrink: 0;
+  min-width: 300px;
+}
+
+.tabNavigation {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: #ffd700;
+}
+
+.tab.activeTab {
+  background: #ffd700;
+  color: #764ba2;
+  border-color: #ffd700;
+}
+
+.mainContent {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.gameSection,
+.leaderboardSection,
+.statsSection {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.connectPrompt {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 2px dashed #ffd700;
+}
+
+.connectPrompt h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffd700;
+}
+
+.connectPrompt p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #ffd700;
+}
+
+.feature span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.gameContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lobbyContent,
+.selectionContent,
+.answeringContent,
+.verificationContent,
+.resultsContent {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.lobbyContent h2,
+.verificationContent h2 {
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
+
+.lobbyContent p,
+.verificationContent p {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 215, 0, 0.3);
+  border-top: 4px solid #ffd700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.resultsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.playAgainBtn {
+  align-self: center;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #764ba2;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.playAgainBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 2px solid rgba(255, 215, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .headerRight {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabNavigation {
+    padding: 0.8rem;
+    gap: 0.3rem;
+  }
+
+  .tab {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .mainContent {
+    padding: 1rem;
+  }
+
+  .gameContent,
+  .connectPrompt {
+    padding: 1.5rem;
+  }
+}
