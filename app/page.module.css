@@ -1,0 +1,416 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #ffd700;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.logoIcon {
+  font-size: 2.5rem;
+  animation: bounce 2s infinite;
+}
+
+.logoIcon:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: #ffd700;
+  margin: 0.5rem 0 0 0;
+  font-weight: 600;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+.howToPlay {
+  padding: 3rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 2rem 0;
+}
+
+.howToPlay h3,
+.categories h3,
+.features h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffd700;
+}
+
+.stepsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.step:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffd700;
+  transform: translateY(-5px);
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #ffd700;
+  color: #764ba2;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.step h4 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: #ffd700;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.categories {
+  padding: 3rem 1rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.categoryCard {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.categoryEmoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.categoryCard h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.playButton {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #764ba2;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 900;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+  letter-spacing: 1px;
+}
+
+.playButton:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+}
+
+.playButton:active {
+  transform: scale(0.98);
+}
+
+.ctaSubtext {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.features {
+  padding: 3rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.featuresList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.feature {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #ffd700;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(5px);
+}
+
+.feature span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.feature strong {
+  color: #ffd700;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid rgba(255, 215, 0, 0.3);
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Game Container Styles */
+.gameContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.backButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+}
+
+.backButton:hover {
+  background: #fff;
+  color: #764ba2;
+}
+
+.gameContainer h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffd700;
+}
+
+.letterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.letterButton {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.letterButton:hover {
+  background: rgba(255, 215, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.letterButton.selected {
+  background: #ffd700;
+  color: #764ba2;
+  transform: scale(1.1);
+}
+
+.selectedLetter {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 2px solid #ffd700;
+}
+
+.selectedLetter h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+}
+
+.selectedLetter span {
+  color: #ffd700;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.startRoundButton {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  color: #764ba2;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 900;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+.startRoundButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .howToPlay h3,
+  .categories h3,
+  .features h3 {
+    font-size: 1.5rem;
+  }
+
+  .stepsContainer,
+  .categoryGrid,
+  .featuresList {
+    grid-template-columns: 1fr;
+  }
+
+  .letterGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .playButton {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  .letterGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
