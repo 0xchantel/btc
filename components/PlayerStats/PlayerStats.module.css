@@ -1,0 +1,132 @@
+.playerStatsContainer {
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.playerStatsContainer h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffd700;
+  margin-bottom: 2rem;
+}
+
+.playerStatsContainer h3 {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 1.5rem;
+}
+
+.notConnected {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border: 2px dashed rgba(255, 215, 0, 0.3);
+  color: #b0b0b0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.statCard:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffd700;
+  transform: translateY(-5px);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.statValue.earnings {
+  color: #ffd700;
+}
+
+.categorySection {
+  margin-top: 3rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.categoryCard {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.categoryCard:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffd700;
+  transform: scale(1.05);
+}
+
+.categoryEmoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.categoryName {
+  font-weight: 600;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+
+.categoryWins {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .playerStatsContainer {
+    padding: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryGrid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
