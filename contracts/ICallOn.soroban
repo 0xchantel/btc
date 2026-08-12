@@ -1,0 +1,110 @@
+// I CALL ON Smart Contract for Stellar Soroban
+// Handles game logic, scoring, and prize distribution on-chain
+
+/*
+Pseudocode for Soroban Rust implementation:
+
+use soroban_sdk::{contract, contractimpl, Symbol, Vec, Map, Env, Address, String};
+
+#[contract]
+pub struct ICallOnContract;
+
+#[contractimpl]
+impl ICallOnContract {
+    /// Initialize a new game round
+    pub fn create_round(
+        env: Env,
+        round_id: String,
+        letter: String,
+        players: Vec<Address>,
+        prize_pool: i128,
+    ) -> Symbol {
+        // Verify letter is valid (A-Z)
+        // Create round data structure
+        // Store in contract state
+        // Return success symbol
+    }
+
+    /// Submit verified answers for a round
+    pub fn verify_answers(
+        env: Env,
+        round_id: String,
+        answers: Map<Address, Map<String, bool>>,
+    ) -> Symbol {
+        // Verify caller is authorized verifier/oracle
+        // Process each player's answers
+        // Determine winners per category
+        // Store results
+    }
+
+    /// Distribute prizes to winners
+    pub fn distribute_prizes(
+        env: Env,
+        round_id: String,
+    ) -> Symbol {
+        // Verify round is completed
+        // Calculate prize amounts per winner
+        // Transfer prizes using native token operations
+        // Emit events for transparency
+    }
+
+    /// Get game state
+    pub fn get_game_state(
+        env: Env,
+        round_id: String,
+    ) -> GameState {
+        // Query and return current game state
+    }
+
+    /// Get player stats
+    pub fn get_player_stats(
+        env: Env,
+        player: Address,
+    ) -> PlayerStats {
+        // Return total wins, losses, prize earnings
+    }
+
+    /// Get leaderboard
+    pub fn get_leaderboard(
+        env: Env,
+        limit: u32,
+    ) -> Vec<LeaderboardEntry> {
+        // Return top players by total winnings
+    }
+}
+
+Data Structures:
+
+struct GameState {
+    round_id: String,
+    letter: String,
+    players: Vec<Address>,
+    prize_pool: i128,
+    status: String, // "active", "completed", "cancelled"
+    winners: Map<String, Address>, // category -> winner address
+    created_at: u64,
+    completed_at: Option<u64>,
+}
+
+struct PlayerStats {
+    total_rounds: u32,
+    total_wins: u32,
+    total_earned: i128,
+    favorite_category: Option<String>,
+    win_rate: u32, // percentage
+}
+
+struct LeaderboardEntry {
+    rank: u32,
+    player: Address,
+    total_earned: i128,
+    win_count: u32,
+}
+*/
+
+// Events that will be emitted:
+// - RoundCreated(round_id, letter, players_count, prize_pool)
+// - AnswerVerified(round_id, player, category, is_correct)
+// - WinnerDetermined(round_id, category, winner, prize_amount)
+// - PrizesDistributed(round_id, total_distributed)
+// - LeaderboardUpdated(player, new_rank, total_earned)
