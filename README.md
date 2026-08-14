@@ -1,6 +1,6 @@
-# BTC Frontend
+# I CALL ON
 
-A Next.js frontend application for Bitcoin.
+Remember that game we played as kids? where you mention an alphabet and each player say a name, object, place, colour etc that starts with the mentioned letter?
 
 ## Getting Started
 
