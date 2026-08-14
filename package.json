@@ -1,24 +1,43 @@
 {
-  "name": "btc-frontend",
-  "version": "0.1.0",
+  "name": "i-call-on",
+  "version": "1.0.0",
   "private": true,
+  "description": "Crypto word game powered by Stellar Soroban",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test:unit": "jest",
+    "test:integration": "jest --config jest.integration.config.js",
+    "test": "npm run test:unit && npm run test:integration",
+    "deploy": "bash scripts/deploy.sh",
+    "setup": "bash scripts/setup.sh",
+    "migrate": "bash scripts/migrate.sh",
+    "dev:all": "bash scripts/dev.sh",
+    "docker:build": "bash scripts/docker-build.sh",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "contract:deploy": "bash scripts/deploy-contract.sh"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "next": "^14.0.0"
+    "next": "^14.0.0",
+    "stellar-sdk": "^11.0.0",
+    "ws": "^8.14.0",
+    "pg": "^8.11.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
+    "typescript": "^5.2.0",
     "@types/node": "^20.0.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-next": "^14.0.0"
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.49.0",
+    "eslint-config-next": "^14.0.0",
+    "jest": "^29.7.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/jest-dom": "^6.1.0"
   }
 }

@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: icall_postgres
+    environment:
+      POSTGRES_DB: icall_on
+      POSTGRES_USER: icall
+      POSTGRES_PASSWORD: icall123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U icall"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Next.js Application
+  app:
+    build: .
+    container_name: icall_app
+    environment:
+      DATABASE_URL: postgresql://icall:icall123@postgres:5432/icall_on
+      NEXT_PUBLIC_STELLAR_NETWORK: testnet
+      NEXT_PUBLIC_SOROBAN_CONTRACT_ID: ${SOROBAN_CONTRACT_ID:-}
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  # Multiplayer WebSocket Server
+  multiplayer:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: icall_multiplayer
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    name: icall_network
