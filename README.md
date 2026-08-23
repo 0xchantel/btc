@@ -1,4 +1,4 @@
-# I CALL ON - Crypto Word Game 🎮
+# I CALL ON - Crypto Word Game 🎮 
 
 > **The Ultimate Blockchain-Powered Word Game** | Call a Letter → Name a Word → Win XLM
 
